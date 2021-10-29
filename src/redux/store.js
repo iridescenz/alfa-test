@@ -2,7 +2,7 @@ import { createStore } from 'redux'
 
 
 const initialState = {
- recipes: []
+ recipes: null
 }
 
 const reducer = (state = initialState, action) => {
