@@ -7,7 +7,7 @@ export const App = () => {
 
   return (
     <Provider store={store}>
-<RecipesComponent />
+    <div className='pg-container'><RecipesComponent /></div>
     </Provider>
   )
 }
