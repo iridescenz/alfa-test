@@ -2,7 +2,8 @@ import { createStore } from 'redux'
 
 
 const initialState = {
- recipes: []
+ recipes: [],
+ liked: []
 }
 
 const reducer = (state = initialState, action) => {

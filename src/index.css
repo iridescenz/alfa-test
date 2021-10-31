@@ -6,15 +6,15 @@
 
 
 body {
-  margin-left: 100px;
   margin-top: 0;
   padding: 0;
+  font-size: 15px;
   font-family: 'Lato', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-h2 {
+h2, a {
   color: grey;
   font-family: 'Lato', sans-serif;
   font-style: normal;
@@ -23,16 +23,8 @@ h2 {
   line-height: 22px;
   display: flex;
   align-items: center;
-}
-h1 {
-  color: black;
-  font-family: 'Lato', sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 22px;
-  display: flex;
-  align-items: center;
+  text-decoration: none!important;
+  text-align: center;
 }
 
 .card {
@@ -42,46 +34,66 @@ h1 {
 }
 
 h1, h2 {
-  margin: 0;
-  padding: 0;
+  margin: 0 auto;
+  height: 2em;
+  width: 80%;
+  padding-top: 1em;
+  line-height: 0.8em;
+  justify-content: center;
+  text-align: center;
   margin-block-start: 0;
   margin-block-end: 0;
   font-family: Lato;
   font-style: normal;
   font-weight: normal;
-  font-size: 16px;
-  line-height: 22px;
+  font-size: 1.1em;
 }
-.card-container {
-  display: grid;
-  width: 1200px;
-  height: auto;
-  gap: 20px;
+svg {
+  width: 20%;
+  margin: 0 auto!important;
+  font-size: 1.3em;
 }
-.pg-container {
-  width: 700px;
-  margin-top:50px;
+.card-header {
   display: flex;
   flex-direction: row;
+  height: 2.2em;
+  width: 17em;
+  align-items: baseline;
+  margin: 0 auto;
+  cursor: pointer;
 }
 .card {
   border: 1px solid rgb(235, 231, 231);
   background: #ffffff;
   box-shadow: 0px 4px 14px rgba(56, 69, 117, 0.25);
   border-radius: 6px;
-  width: 350px;
-  height: 250;
+  width: 20em;
+  height: 18em;
   border-radius: 4px;
-  padding: 20px;
+  margin: 1.2em;
 }
-.recipes-component {
-  margin-top: 0;
-  padding-left: 50px;
-  margin-left: 50px;
-  width: 300px;
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 22rem);
+  margin: 0 auto;
+  width:85vw;
+  justify-content: center;
+  background-color: blue;
   height: auto;
   border: 1px solid rgb(235, 231, 231);
   background: #ffffff;
   box-shadow: 0px 4px 14px rgba(56, 69, 117, 0.25);
   border-radius: 6px;
+}
+img {
+  height: 77%;
+  width: auto;
+  padding: 1.2em;
+  margin: 0 auto;
+}
+
+a {
+  margin: 0 auto;
+  height: 2em;
+  padding-bottom: 1em;
 }

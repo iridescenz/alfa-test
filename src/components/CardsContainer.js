@@ -12,6 +12,6 @@ export const CardsContainer = () => {
    fullRecipe={recipe.sourceUrl} 
   />)))
   return (
-  <div>{recipesList || 'no' }</div>
+  <div className='card-container'>{recipesList }</div>
   )
 }

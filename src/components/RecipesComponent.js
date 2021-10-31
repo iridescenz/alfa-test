@@ -21,7 +21,7 @@ export const RecipesComponent = () => {
 
   return (
 <div>
-    <form className='form' onSubmit={getRecipes}>
+    <form onSubmit={getRecipes}>
     <button className='button' type='submit' onClick={() => console.log(recipes)}>
       Get random recipes
     </button>
