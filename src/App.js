@@ -4,10 +4,11 @@ import { Provider } from 'react-redux'
 import { RecipesComponent } from './components/RecipesComponent'
 
 export const App = () => {
-
   return (
     <Provider store={store}>
-    <div className='pg-container'><RecipesComponent /></div>
+      <div className='pg-container'>
+        <RecipesComponent />
+      </div>
     </Provider>
   )
 }
