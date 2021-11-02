@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
+import defaultRecipeImage from './images/defaultRecipeImage.png'
 
 export const Card = ({ title, image, fullRecipe, id }) => {
   const [like, setLike] = useState(false)
@@ -26,7 +27,7 @@ export const Card = ({ title, image, fullRecipe, id }) => {
         </div>
       </div>
 
-      <img src={image} alt={title} onClick={() => console.log(liked)} />
+      <img src={image ? image : defaultRecipeImage} alt={title} onClick={() => console.log(liked)} />
       <a href={fullRecipe}>see recipe</a>
     </div>
   )
