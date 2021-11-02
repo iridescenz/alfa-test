@@ -1,13 +1,13 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
 import { Card } from './Card'
+import { useSelector } from 'react-redux'
 
 export const CardsContainer = () => {
-  const recipes = useSelector((state) => state.recipes)
-  console.log(recipes)
+  const liked = useSelector((state) => state.liked)
+  const deleted = useSelector((state) => state.deleted)
+  const recipes = useSelector((state) => state.recipes[0])
   const recipesList =
     recipes &&
-    recipes.map((recipes) =>
       recipes.map((recipe) => (
         <Card
           key={recipe.id}
@@ -17,6 +17,9 @@ export const CardsContainer = () => {
           fullRecipe={recipe.sourceUrl}
         />
       ))
-    )
-  return <div className='card-container'>{recipesList}</div>
+      // const likedposts = recipes.map((recipe) => liked.includes(recipe.id))
+  return ( <>
+  <div className='card-container' >{recipesList}</div>
+  {/* <div className='card-container' style={{backgroundColor: 'red'}}>{likedposts}</div> */}
+  </>)
 }
