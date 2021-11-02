@@ -1,18 +1,29 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { FcLikePlaceholder } from 'react-icons/fc'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHeart } from '@fortawesome/free-solid-svg-icons'
 
 export const Card = ({ title, image, fullRecipe, id }) => {
-  const [active, setActive] = useState(false)
+  const [like, setLike] = useState(false)
+  const changeColor = like === false ? 'lightGrey' : 'pink'
   const liked = useSelector((state) => state.liked)
   const dispatch = useDispatch()
   return (
     <div className='card'>
       <div className='card-header'>
         <h2>{title}</h2>
-        <div className='like' onClick={() => {dispatch({ type: 'LIKED', payload: id })}}><FcLikePlaceholder onClick={(e) => {
-          e.target.style.backgrounColor = 'blue'
-          console.log(e.target.style.backgrounColor) }}/></div>
+        <div
+          className='like'
+          onClick={() => {
+            dispatch({ type: 'LIKED', payload: id })
+          }}
+        >
+          <FontAwesomeIcon
+            icon={faHeart}
+            style={{ color: changeColor }}
+            onClick={() => setLike(!like)}
+          />
+        </div>
       </div>
 
       <img src={image} alt={title} onClick={() => console.log(liked)} />
