@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart, faTimes } from '@fortawesome/free-solid-svg-icons'
 import defaultRecipeImage from './images/defaultRecipeImage.png'
@@ -7,9 +7,6 @@ import defaultRecipeImage from './images/defaultRecipeImage.png'
 export const Card = ({ title, image, fullRecipe, id }) => {
   const [like, setLike] = useState(false)
   const changeColor = like === false ? 'lightGray' : 'rgb(233, 56, 56)'
-  const liked = useSelector((state) => state.liked)
-  const recipes = useSelector((state) => state.recipes)
-  const deleted = useSelector((state) => state.deleted)
   const dispatch = useDispatch()
   return (
     <div className='card'>
@@ -41,7 +38,6 @@ export const Card = ({ title, image, fullRecipe, id }) => {
       <img
         src={image ? image : defaultRecipeImage}
         alt={title}
-        onClick={() => console.log(deleted, liked)}
       />
       <a href={fullRecipe}>see recipe</a>
     </div>

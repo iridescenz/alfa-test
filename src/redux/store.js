@@ -3,12 +3,7 @@ import { createStore } from 'redux'
 const initialState = {
   recipes: [],
   liked: [],
-  deleted: [],
 }
-
-// const showData = (recipes, liked, deleted) =>  {
-//   return recipes.map((recipe) => liked.icludes(recipe.id)).filter((recipe) => deleted.map((del) => recipe.id !== del.id))
-// }
 
 const reducer = (state = initialState, action) => {
   if (action.type === 'LIKED') {
@@ -21,11 +16,15 @@ const reducer = (state = initialState, action) => {
   }
   if (action.type === 'DELETE') {
     return {
-       ...state, deleted: [...state.deleted, action.payload] 
+      ...state,
+      recipes: state.recipes.filter((recipe) => recipe.id !== action.payload),
     }
   }
   if (action.type === 'SET_RECIPES') {
-    return { ...state, recipes: [action.payload] }
+    return { ...state, recipes: action.payload }
+  }
+  if (action.type === 'SHOW_LIKED') {
+    return { ...state, recipes: state.recipes.filter((recipe) => state.liked.includes(recipe.id)) }
   }
   return state
 }
