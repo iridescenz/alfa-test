@@ -3,10 +3,10 @@ import { Card } from './Card'
 import { useSelector } from 'react-redux'
 
 export const CardsContainer = () => {
-  const recipes = useSelector((state) => state.recipes)
+  const data = useSelector((state) => state.showData)
   const recipesList =
-    recipes &&
-    recipes.map(
+    data &&
+    data.map(
       (recipe) =>
         recipe.title && (
           <Card
@@ -18,5 +18,5 @@ export const CardsContainer = () => {
           />
         )
     )
-  return <div className='card-container'>{recipesList}</div>
+  return <div className='card-container'>{recipesList.length > 0 ? recipesList : <h2>nothing to show</h2>}</div>
 }

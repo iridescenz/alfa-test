@@ -88,14 +88,38 @@ path, svg {
   grid-template-columns: repeat(auto-fit, 22rem);
   margin: 0 auto;
   margin-top: 1.3em;
+  color:rgb(207, 212, 212);
   width: 85vw;
-  justify-content: center;
-  background-color: blue;
   height: auto;
+  justify-content: center;
+  min-height: 3em;
   border: 1px solid rgb(235, 231, 231);
   background: #ffffff;
   box-shadow: 0px 4px 14px rgba(56, 69, 117, 0.25);
   border-radius: 6px;
+}
+.card-container > h2 {
+  margin: 0 auto;
+}
+button {
+  margin: 3em 40%;
+  width: 10em;
+  height: 3em;
+  border: 1px solid lightgray;
+  color: rgb(95, 92, 92);
+  cursor: pointer;
+  background-color: white;
+  padding: 0 20px;
+  border-radius: 5px;
+  outline: none;
+  font-size: 16px;
+}
+button:hover {
+  background-color: rgb(80, 153, 80);
+  color: white;
+  border: lime;
+  transform: scale(1.2);
+  transition-duration: 800ms;
 }
 img {
   height: 77%;
@@ -108,4 +132,14 @@ a {
   margin: 0 auto;
   height: 2em;
   padding-bottom: 1em;
+}
+.show-liked {
+  gap: 1em;
+  width:85vw;
+  height: 2em;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  margin: 1em auto;
+  justify-content: flex-end;
 }

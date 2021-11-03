@@ -6,15 +6,15 @@ import { CardsContainer } from './CardsContainer'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-
 export const RecipesComponent = () => {
   const recipes = useSelector((state) => state.recipes)
-  const [like, setLike] = useState(false)
-  const changeColor = like === false ? 'lightGray' : 'rgb(233, 56, 56)'
+  const [liked, setLiked] = useState(false)
+  const changeFilterLikeColor = liked === false ? 'lightGray' : 'rgb(233, 56, 56)'
   const dispatch = useDispatch()
-  // const toggleLike = (state) => {
-  //   like === false ? dispatch({ type: 'SHOW_LIKED' } 
-  // 
+  const toggleLike =
+    liked === false
+      ? dispatch({ type: 'SHOW_ALL' })
+      : dispatch({ type: 'SHOW_LIKED' })
   async function getRecipes(e) {
     e.preventDefault()
     const apiKey = config.API_KEY
@@ -37,9 +37,16 @@ export const RecipesComponent = () => {
           </button>
         </form>
       ) : (
-        <div><div className='show-liked' onClick={()=> dispatch({ type: 'SHOW_LIKED' }) && setLike(!like) }  > <FontAwesomeIcon
-            icon={faHeart} style={{ color: changeColor }}/></div><CardsContainer /></div>
-      
+        <div>
+          <div
+            className='show-liked'
+            onClick={() => setLiked(!liked) && toggleLike}
+          >
+          <div> liked recipes</div>
+            <FontAwesomeIcon icon={faHeart} style={{ color: changeFilterLikeColor }} />
+          </div>
+          <CardsContainer />
+        </div>
       )}
     </div>
   )
