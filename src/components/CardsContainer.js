@@ -3,20 +3,35 @@ import { Card } from './Card'
 import { useSelector } from 'react-redux'
 
 export const CardsContainer = () => {
-  const data = useSelector((state) => state.showData)
-  const recipesList =
-    data &&
-    data.map(
-      (recipe) =>
-        recipe.title && (
-          <Card
-            key={recipe.id}
-            id={recipe.id}
-            title={recipe.title}
-            image={recipe.image}
-            fullRecipe={recipe.sourceUrl}
-          />
-        )
-    )
-  return <div className='card-container'>{recipesList.length > 0 ? recipesList : <h2>nothing to show</h2>}</div>
+  const view = useSelector((state) => state.view)
+  const data = useSelector(({ recipes, liked, view }) => {
+    if (view === 'all') {
+      return recipes
+    }
+    return recipes.filter((recipe) => liked.includes(recipe.id))
+  })
+
+  if (data.length === 0) {
+    return <h2>nothing to show</h2>
+  }
+
+  return (
+    <React.Fragment>
+      <h2>{view}</h2>
+      <div className='card-container'>
+        {data.map(
+          (recipe) =>
+            recipe.title && (
+              <Card
+                key={recipe.id}
+                id={recipe.id}
+                title={recipe.title}
+                image={recipe.image}
+                fullRecipe={recipe.sourceUrl}
+              />
+            )
+        )}
+      </div>
+    </React.Fragment>
+  )
 }
