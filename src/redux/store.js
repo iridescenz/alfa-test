@@ -4,7 +4,7 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 const initialState = {
   recipes: [],
   liked: [],
-  view: 'all' //liked
+  view: 'all', //liked
 }
 
 const reducer = (state = initialState, action) => {
@@ -26,9 +26,8 @@ const reducer = (state = initialState, action) => {
     return { ...state, recipes: action.payload }
   }
   if (action.type === 'SET_VIEW') {
-    return { ...state, view: action.payload}
+    return { ...state, view: action.payload }
   }
-
   return state
 }
 
@@ -46,4 +45,5 @@ export const setAllView = () => {
   }
 }
 export const store = createStore(reducer, initialState, composeWithDevTools())
-export const configureStore = (initialState) => createStore(reducer, initialState);
+export const configureStore = (initialState) =>
+  createStore(reducer, initialState)

@@ -32,6 +32,6 @@ describe('LoadRecipesButton', () => {
 
     await new Promise((r) => setTimeout(r, 300))
 
-    expect(await store.getState().recipes).toEqual(['test data1', 'test data2'])
+    expect(store.getState().recipes).toEqual(['test data1', 'test data2'])
   })
 })

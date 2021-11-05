@@ -7,7 +7,7 @@ export const ViewToggleButton = () => {
   const dispatch = useDispatch()
   if (view === 'all') {
     return (
-      <div className='view-btn'>
+      <div className='button'>
         <button onClick={() => dispatch(setLikedView())}>show liked</button>
       </div>
     )

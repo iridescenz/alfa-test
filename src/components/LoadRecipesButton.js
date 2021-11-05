@@ -5,7 +5,6 @@ import { config } from './config'
 
 export const LoadRecipesButton = () => {
   const dispatch = useDispatch()
-
   async function getRecipes(e) {
     console.log('>>>>> getRecipes')
     const apiKey = config.API_KEY

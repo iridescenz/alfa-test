@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useDispatch, useSelector} from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart, faTimes } from '@fortawesome/free-solid-svg-icons'
 import defaultRecipeImage from './images/defaultRecipeImage.png'
@@ -37,7 +37,6 @@ export const Card = ({ title, image, fullRecipe, id }) => {
       </div>
 
       <img
-      onClick={() => console.log(state)}
         src={image ? image : defaultRecipeImage}
         alt={title}
       />
