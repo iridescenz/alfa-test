@@ -17,7 +17,7 @@ export const CardsContainer = () => {
 
   return (
     <React.Fragment>
-      <h2>{view}</h2>
+      <h2>{view} recipes</h2>
       <div className='card-container'>
         {data.map(
           (recipe) =>

@@ -1,9 +1,9 @@
 import { render, fireEvent, waitFor, screen } from '@testing-library/react'
 import { Provider } from 'react-redux'
-import { ViewTiggleButton } from './ViewTiggleButton'
+import { ViewTiggleButton } from './ViewToggleButton'
 import { configureStore } from '../redux/store'
 
-describe('ViewTiggleButton', () => {
+describe('ViewToggleButton', () => {
   test('switch from "show liked" to "show all" button', () => {
     const store = configureStore({
       recipes: [],
@@ -12,7 +12,7 @@ describe('ViewTiggleButton', () => {
     })
     render(
       <Provider store={store}>
-        <ViewTiggleButton />
+        <ViewTggleButton />
       </Provider>
     )
 

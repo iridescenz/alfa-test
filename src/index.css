@@ -102,12 +102,12 @@ path, svg {
   margin: 0 auto;
 }
 button {
-  margin: 3em 40%;
   width: 10em;
   height: 3em;
   border: 1px solid lightgray;
   color: rgb(95, 92, 92);
   cursor: pointer;
+  margin-top: 10%;
   background-color: white;
   padding: 0 20px;
   border-radius: 5px;
@@ -142,4 +142,12 @@ a {
   flex-direction: row;
   margin: 1em auto;
   justify-content: flex-end;
+}
+.pg-container {
+  margin: 0 auto;
+  height: 2em;
+  width: 80%;
+  line-height: 0.8em;
+  justify-content: center;
+  text-align: center;
 }

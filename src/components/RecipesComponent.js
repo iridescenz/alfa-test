@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 
 import { CardsContainer } from './CardsContainer'
-import { ViewTiggleButton } from './ViewTiggleButton'
+import { ViewToggleButton } from './ViewToggleButton'
 import { LoadRecipesButton } from './LoadRecipesButton'
 
 export const RecipesComponent = () => {
@@ -14,7 +14,7 @@ export const RecipesComponent = () => {
 
   return (
     <div>
-      <ViewTiggleButton />
+      <ViewToggleButton />
       <CardsContainer />
     </div>
   )

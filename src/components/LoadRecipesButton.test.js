@@ -1,4 +1,4 @@
-import { render, fireEvent, waitFor, screen } from '@testing-library/react'
+import { render, fireEvent, screen } from '@testing-library/react'
 import { LoadRecipesButton } from './LoadRecipesButton'
 import { Provider } from 'react-redux'
 import { configureStore } from '../redux/store'
@@ -31,7 +31,6 @@ describe('LoadRecipesButton', () => {
     fireEvent.click(button)
 
     await new Promise((r) => setTimeout(r, 300))
-    //https://stackoverflow.com/questions/45478730/jest-react-testing-check-state-after-delay/56472619
 
     expect(await store.getState().recipes).toEqual(['test data1', 'test data2'])
   })

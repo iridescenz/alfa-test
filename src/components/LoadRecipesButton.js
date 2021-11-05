@@ -14,7 +14,6 @@ export const LoadRecipesButton = () => {
         `https://api.spoonacular.com/recipes/random?&apiKey=${apiKey}&number=33`
       )
       .then((response) => {
-        // console.log(response)
         dispatch({ type: 'SET_RECIPES', payload: response.data.recipes })
       })
       .catch((er) => console.log('err', er))
